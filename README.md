@@ -1,5 +1,5 @@
-Project based on Bruce FE
-Youtube Link: https://youtu.be/zqV7NIFGDrQ
+# Project based on Bruce FE
+Youtube Link: https://youtu.be/zqV7NIFGDrQ \
 
 Technology Used
 #1 React
