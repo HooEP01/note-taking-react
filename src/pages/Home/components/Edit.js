@@ -1,104 +1,144 @@
-import { useState } from 'react'
-import { v4 } from "uuid" 
+import { useState } from 'react';
+import { v4 } from 'uuid';
 
-const Edit = ( {add} ) => {
+const Edit = ({ add, submittingStatus }) => {
+  const [note, setNote] = useState('');
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
 
-    const [note, setNote] = useState("")
-    const [date, setDate] = useState("")
-    const [time, setTime] = useState("")
+  const noteChange = (e) => {
+    setNote(e.target.value);
+  };
 
-    const noteChange = (e) => {
-        setNote(e.target.value)
-    }
+  const dateChange = (e) => {
+    setDate(e.target.value);
+  };
 
-    const dateChange = (e) => {
-        setDate(e.target.value)
-    }
+  const timeChange = (e) => {
+    setTime(e.target.value);
+  };
 
-    const timeChange = (e) => {
-        setTime(e.target.value)
-    }
+  const addItem = () => {
 
-    const addItem = () => {
-        add(
-            (prevData) => {
-                return [ {
-                    id: v4(),
-                    note, 
-                    date, 
-                    time
-                }, ...prevData]
-            }
-        )
-    }
+    submittingStatus.current = true;
 
-    return <div> 
-        <h1 className="
+    add((prevData) => {
+      return [
+        {
+          id: v4(),
+          note,
+          date,
+          time,
+        },
+        ...prevData,
+      ];
+    });
+  };
+
+  return (
+    <div>
+      <h1
+        className="
             text-3xl 
             font-bold
-            pb-4">备忘录</h1>
-        <div className="
-            pb-2">
-            <p className="
+            pb-4"
+      >
+        备忘录
+      </h1>
+      <div
+        className="
+            pb-2"
+      >
+        <p
+          className="
                 text-lg 
                 font-semibold
-                pb-2">记事:</p>
-            <input type="text" 
-                onChange={noteChange}
-                value={note}
-                required
-                className="
+                pb-2"
+        >
+          记事:
+        </p>
+        <input
+          type="text"
+          onChange={noteChange}
+          value={note}
+          required
+          className="
                 w-full
                 border border-slate-500
                 p-1
-                "/>
-        </div>
+                "
+        />
+      </div>
 
-        <div className="
-            pb-2">
-            <p className="
+      <div
+        className="
+            pb-2"
+      >
+        <p
+          className="
                 text-lg
                 font-semibold
-                pb-2">日期:</p>
-            <input type="date"
-                onChange={dateChange}
-                value={date}
-                required
-                className="
+                pb-2"
+        >
+          日期:
+        </p>
+        <input
+          type="date"
+          onChange={dateChange}
+          value={date}
+          required
+          className="
                 w-full
                 border border-slate-500
                 p-1
-                "/>
-        </div>
-        
-        <div className="
-            pb-3">
-            <p className="
+                "
+        />
+      </div>
+
+      <div
+        className="
+            pb-3"
+      >
+        <p
+          className="
                 text-lg
                 font-semibold
-                pb-2">时间:</p>
-            <input type="time" 
-                onChange={timeChange}
-                value={time}
-                required
-                className="
+                pb-2"
+        >
+          时间:
+        </p>
+        <input
+          type="time"
+          onChange={timeChange}
+          value={time}
+          required
+          className="
                 w-full
                 border border-slate-500
                 p-1
-                "/>
-        </div>
+                "
+        />
+      </div>
 
-        <div className="
-            pb-3">
-            <button onClick={addItem} type="button" className="
+      <div
+        className="
+            pb-3"
+      >
+        <button
+          onClick={addItem}
+          type="button"
+          className="
                 w-full
                 bg-slate-800
                 hover:bg-slate-900
                 text-white
-                p-2">新增</button>
-        </div>
-        
+                p-2"
+        >
+          新增
+        </button>
+      </div>
     </div>
-}
+  );
+};
 
 export default Edit;
