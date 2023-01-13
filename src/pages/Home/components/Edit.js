@@ -41,7 +41,8 @@ const Edit = ({ add, submittingStatus }) => {
         className="
             text-3xl 
             font-bold
-            pb-4"
+            pb-4
+            dark:text-slate-100"
       >
         备忘录
       </h1>
@@ -53,7 +54,8 @@ const Edit = ({ add, submittingStatus }) => {
           className="
                 text-lg 
                 font-semibold
-                pb-2"
+                pb-2
+                dark:text-slate-100"
         >
           记事:
         </p>
@@ -66,6 +68,8 @@ const Edit = ({ add, submittingStatus }) => {
                 w-full
                 border border-slate-500
                 p-1
+                dark:bg-slate-600
+                dark:text-slate-100
                 "
         />
       </div>
@@ -78,7 +82,8 @@ const Edit = ({ add, submittingStatus }) => {
           className="
                 text-lg
                 font-semibold
-                pb-2"
+                pb-2
+                dark:text-slate-100"
         >
           日期:
         </p>
@@ -91,6 +96,8 @@ const Edit = ({ add, submittingStatus }) => {
                 w-full
                 border border-slate-500
                 p-1
+                dark:bg-slate-600
+                dark:text-slate-100
                 "
         />
       </div>
@@ -103,7 +110,8 @@ const Edit = ({ add, submittingStatus }) => {
           className="
                 text-lg
                 font-semibold
-                pb-2"
+                pb-2
+                dark:text-slate-100"
         >
           时间:
         </p>
@@ -116,7 +124,8 @@ const Edit = ({ add, submittingStatus }) => {
                 w-full
                 border border-slate-500
                 p-1
-                "
+                dark:bg-slate-600
+                dark:text-slate-100"
         />
       </div>
 
@@ -132,7 +141,8 @@ const Edit = ({ add, submittingStatus }) => {
                 bg-slate-800
                 hover:bg-slate-900
                 text-white
-                p-2"
+                p-2 
+                dark:bg-slate-500"
         >
           新增
         </button>

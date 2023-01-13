@@ -1,6 +1,5 @@
 const Item = ({ id, note, date, time, deleteData, submittingStatus }) => {
   const deleteItem = () => {
-
     deleteData((prev) => {
       submittingStatus.current = true;
       return prev.filter((item) => item.id !== id);
@@ -19,8 +18,12 @@ const Item = ({ id, note, date, time, deleteData, submittingStatus }) => {
         items-center"
     >
       <div>
-        <p>{note}</p>
-        <p>{`${date} ${time}`}</p>
+        <p className="
+            dark:text-slate-100"
+        >{note}</p>
+        <p className="
+            dark:text-slate-100"
+        >{`${date} ${time}`}</p>
       </div>
       <div
         className="
